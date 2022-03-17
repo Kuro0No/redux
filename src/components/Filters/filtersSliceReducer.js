@@ -1,21 +1,25 @@
-// const initState = {
-//     search: '',
-//     status: '',
-//     priority: []
-// }
+const initState = {
+    search: '',
+    status: '',
+    priority: []
+}
 
-// const filtersSliceReducer = (state = initState, action) => {
+const filtersSliceReducer = (state = initState, action) => {
 
-//     switch (action.type) {
-//         case 'filters/SeacrhFilters':
-//             return {
-//                 ...state,
-//                 search: action.payload
-//             }
+    switch (action.type) {
+        case 'filters/SeacrhFilters':
+            return {
+                ...state,
+                search: action.payload
+            }
+        case 'filters/statusFilters':
+            return {
+                ...state,
+                status: action.payload
+            }
+        default:
+            return { ...state }
+    }
+}
 
-//         default:
-//             return { ...state }
-//     }
-// }
-
-// export default filtersSliceReducer
+export default filtersSliceReducer
