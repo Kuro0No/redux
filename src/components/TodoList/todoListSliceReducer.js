@@ -1,6 +1,6 @@
 const initState = [
     { id: 1, name: 'Learn redux', prioriry: 'Medium', completed: true, },
-    { id: 2, name: 'Learn Nodejs', prioriry: 'Hight', completed: false, },
+    { id: 2, name: 'Learn Nodejs', prioriry: 'High', completed: false, },
     { id: 3, name: 'Learn NextJs', prioriry: 'Low', completed: true, }
 ]
 

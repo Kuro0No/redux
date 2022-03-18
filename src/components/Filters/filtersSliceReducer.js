@@ -1,6 +1,6 @@
 const initState = {
     search: '',
-    status: '',
+    status: 'All',
     priority: []
 }
 
@@ -16,6 +16,11 @@ const filtersSliceReducer = (state = initState, action) => {
             return {
                 ...state,
                 status: action.payload
+            }
+        case 'filters/priorityFilters':
+            return {
+                ...state,
+                priority: action.payload
             }
         default:
             return { ...state }

@@ -18,3 +18,10 @@ export const statusFilterAction = (status) => {
         payload: status
     }
 }
+
+export const priorityFilterAction = (status) => {
+    return {
+        type: 'filters/priorityFilters',
+        payload: status
+    }
+}
