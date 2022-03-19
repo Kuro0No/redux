@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { priorityFilterAction, searchFilterAction, statusFilterAction } from '../../redux/action';
 import { searchTextSelector } from '../../redux/selector';
+import filtersSliceReducer from './filtersSliceReducer';
 
 const { Search } = Input;
 
@@ -14,18 +15,18 @@ export default function Filters() {
 
   const filterSearchChange =(e) => {
     setSearchText(e.target.value)
-    dispath(searchFilterAction(e.target.value))
+    dispath(filtersSliceReducer.actions.SeacrhFilters(e.target.value))
    
     
   }
   const handleStatusChange = (e) => {
     setStatus(e.target.value)
-    dispath(statusFilterAction(e.target.value))
+    dispath(filtersSliceReducer.actions.statusFilters(e.target.value))
 
   }
   const prioriryFilterChange = (e) => {
     setPriority(e)
-    dispath(priorityFilterAction(e))
+    dispath(filtersSliceReducer.actions.priorityFilters(e))
   }
   return (
     <Row justify='center'>

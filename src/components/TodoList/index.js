@@ -5,7 +5,7 @@ import { addTodoAction } from '../../redux/action';
 import Todo from '../Todo';
 import { v4 as uuidv4 } from 'uuid';
 import { todoListSelector,todosRemainingSelector } from '../../redux/selector';
-
+import todoListSliceReducer from './todoListSliceReducer';
 
 export default function TodoList() {
   const todoList = useSelector(todosRemainingSelector)
@@ -15,7 +15,7 @@ export default function TodoList() {
   const dispath = useDispatch()
 
   const handleAddClickButton=() => {
-    dispath(addTodoAction({
+    dispath(todoListSliceReducer.actions.addTodo({
       id: uuidv4(),
       name: nameTodo,
       prioriry: prioriry,
